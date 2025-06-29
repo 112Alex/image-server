@@ -1,5 +1,0 @@
-go.sum
-.vscode
-static
-cmd/server/static
-cmd/server/data
