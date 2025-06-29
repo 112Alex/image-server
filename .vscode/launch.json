@@ -11,7 +11,8 @@
             "request": "launch",
             "mode": "auto",
             "program": "cmd/server/main.go",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
         }
     ]
 }

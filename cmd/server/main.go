@@ -23,6 +23,7 @@ func main() {
 	const dbPath = "data/images.db"
 	const staticDir = "static"
 
+	ensureDirExists("data")
 	dbConn := db.InitDB(dbPath)
 	ensureDirExists(staticDir)
 	images.ScanAndStoreImages(staticDir, dbConn)

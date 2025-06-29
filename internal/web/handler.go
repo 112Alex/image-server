@@ -5,13 +5,17 @@ import (
 	"encoding/json"
 	"html/template"
 	"image-server/internal/db"
+	"log"
 	"net/http"
 )
 
 // ServeIndex отдает главную HTML-страницу
+// Важно: сервер должен запускаться из корня проекта!
 func ServeIndex(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("D:/GOLANG/image-server/internal/web/templates/index.html")
+	const relTmplPath = "internal/web/templates/index.html"
+	tmpl, err := template.ParseFiles(relTmplPath)
 	if err != nil {
+		log.Printf("Ошибка шаблона (%s): %v", relTmplPath, err)
 		http.Error(w, "Ошибка шаблона", http.StatusInternalServerError)
 		return
 	}
