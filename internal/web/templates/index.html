@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Галерея изображений</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .gallery img { max-width: 200px; margin: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Галерея изображений</h1>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        fetch('/api/images')
+            .then(res => res.json())
+            .then(images => {
+                console.log('API /api/images:', images); // debug
+                const gallery = document.getElementById('gallery');
+                images.forEach(img => {
+                    const el = document.createElement('img');
+                    el.src = '/static/' + img.path;
+                    gallery.appendChild(el);
+                });
+            });
+    </script>
+</body>
+</html>
