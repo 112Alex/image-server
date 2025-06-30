@@ -33,13 +33,13 @@ image-server/
 
 **PowerShell:**
 ```powershell
-git clone <URL-репозитория>
+git clone github.com/112Alex/image-server
 cd image-server
 ```
 
 **Linux (Ubuntu):**
 ```bash
-git clone <URL-репозитория>
+git clone github.com/112Alex/image-server
 cd image-server
 ```
 
